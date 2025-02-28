@@ -1,0 +1,205 @@
+/* ===========================
+   1. Estilo geral da página
+   =========================== */
+@font-face {
+  font-family: "RainyHearts";
+  src: url("./rainyhearts.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: url("assets/imagens/fundo.webp") no-repeat center center;
+  background-size: cover;
+  font-family: "RainyHearts", sans-serif;
+  color: #cce0ff;
+  text-align: center;
+}
+
+h1 {
+  margin: 20px 0 30px;
+  font-size: 4rem;
+  text-shadow: 2px 2px 4px #000;
+  color: #79ffff;
+}
+
+/* ===========================
+   2. Container das "tábuas"
+   =========================== */
+.container {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===========================
+   3. Estilos dos painéis (tablet)
+   =========================== */
+.tablet {
+  width: 350px;
+  background: rgba(25, 40, 60, 0.8);
+  border: 3px solid #39f5e2;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(57, 245, 226, 0.2);
+  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px; /* Para espaçamento quando em telas menores */
+}
+
+.tablet:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(57, 245, 226, 0.35);
+}
+
+/* 
+   Efeito minimal de neon/tira luminosa no topo
+   Agora com leve "flicker" (piscar) adicionando 
+   uma animação @keyframes (veja ao final do CSS)
+*/
+.tablet::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 6px;
+  background: linear-gradient(90deg, #39f5e2, #2b70a1);
+  border-radius: 3px;
+  box-shadow: 0 0 12px #39f5e2, 0 0 8px #2b70a1 inset;
+  animation: neonFlicker 3s infinite alternate;
+}
+
+.tablet h2 {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: #79ffff;
+  text-shadow: 1px 1px 3px #000;
+}
+
+/* Lista */
+.tablet ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  flex: 1;
+}
+
+.tablet li {
+  margin-bottom: 18px;
+  font-size: 1.4rem;
+  line-height: 1.4;
+}
+
+.tablet li strong {
+  color: #ebff8d;
+  text-shadow: 1px 1px 2px #036872;
+  font-weight: bold;
+}
+
+/* ===========================
+   4. Explicações (explanation)
+   =========================== */
+/*
+   Agora controlaremos a altura via max-height e transição,
+   combinando com a animação de "digitação" via JS.
+*/
+.explanation {
+  display: block;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  margin-top: 5px;
+  /* Deixamos o texto vazio a princípio, e o JS preenche
+     de forma "digitada". */
+}
+
+/* Quando estiver visível (classe "open"), expande a altura */
+.explanation.open {
+  opacity: 1;
+  max-height: 500px; /* Um valor grande o suficiente para caber o texto */
+}
+
+/* ===========================
+   5. Mandamento + Ícone-lab
+   =========================== */
+.mandamento {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.mandamento:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.icon-lab {
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
+  color: #39f5e2;
+}
+
+.icon-lab.rotated {
+  transform: rotate(180deg);
+}
+
+/* ===========================
+   6. Estilo do cursor piscante
+   =========================== */
+.cursor {
+  display: inline-block;
+  width: 2px;
+  background-color: #39f5e2;
+  margin-left: 3px;
+  animation: blink 0.8s steps(1) infinite;
+}
+
+/* ===========================
+   7. Animações (keyframes)
+   =========================== */
+/* Cursor piscante */
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Efeito de flicker neon */
+@keyframes neonFlicker {
+  0% {
+    box-shadow: 0 0 12px #39f5e2, 0 0 8px #2b70a1 inset;
+  }
+  50% {
+    box-shadow: 0 0 18px #39f5e2, 0 0 10px #2b70a1 inset;
+  }
+  100% {
+    box-shadow: 0 0 15px #39f5e2, 0 0 6px #2b70a1 inset;
+  }
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mandamentos da LGPD</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Mandamentos da LGPD</h1>
+
+    <div class="container">
+      <div class="tablet">
+        <h2>Painel 1</h2>
+        <ul>
+          <li>
+            <span class="mandamento">
+              <span class="mandamento-text"><strong>01</strong> - Pedir Permissão</span>
+              <span class="icon-lab">🧪</span>
+            </span>
+            <small class="explanation hidden"> Nenhum dado pode ser coletado ou utilizado sem a autorização clara e informada do titular ou de seu responsável legal. </small>
+          </li>
+          <li>
+            <span class="mandamento">
+              <span class="mandamento-text"><strong>02</strong> - Proteger como um Guardião</span>
+              <span class="icon-lab">🧪</span>
+            </span>
+            <small class="explanation hidden"> Os dados devem estar protegidos contra vazamentos, acessos não autorizados e qualquer tipo de uso indevido. </small>
+          </li>
+          <li>
+            <span class="mandamento">
+              <span class="mandamento-text"><strong>03</strong> - Respeitar os Direitos do Dono</span>
+              <span class="icon-lab">🧪</span>
+            </span>
+            <small class="explanation hidden"> Toda pessoa tem o direito de acessar, corrigir ou excluir seus dados sempre que desejar. </small>
+          </li>
+          <li>
+            <span class="mandamento">
+              <span class="mandamento-text"><strong>04</strong> - Usar com Propósito</span>
+              <span class="icon-lab">🧪</span>
+            </span>
+            <small class="explanation hidden"> Os dados só podem ser usados para finalidades claras, lícitas e informadas previamente ao titular. </small>
+          </li>
+          <li>
+            <span class="mandamento">
+              <span class="mandamento-text"><strong>05</strong> - Coletar só o Necessário</span>
+              <span class="icon-lab">🧪</span>
+            </span>
+            <small class="explanation hidden"> Para evitar riscos, deve-se coletar apenas as informações estritamente necessárias para a atividade. </small>
+          </li>
+        </ul>
+      </div>
+
+      <div class="tablet">
+        <h2>Painel 2</h2>
+        <ul>
+          <li>
+            <span class="mandamento">
+              <span class="mandamento-text"><strong>06</strong> - Cuidar dos Menores de Idade</span>
+              <span class="icon-lab">🧪</span>
+            </span>
+            <small class="explanation hidden"> O tratamento de dados de crianças e adolescentes requer autorização dos responsáveis e cuidados redobrados. </small>
+          </li>
+          <li>
+            <span class="mandamento">
+              <span class="mandamento-text"><strong>07</strong> - Explicar Tudo Direitinho</span>
+              <span class="icon-lab">🧪</span>
+            </span>
+            <small class="explanation hidden"> Os titulares devem ser informados de forma clara sobre como e por quanto tempo seus dados serão utilizados. </small>
+          </li>
+          <li>
+            <span class="mandamento">
+              <span class="mandamento-text"><strong>08</strong> - Manter os Dados Atualizados</span>
+              <span class="icon-lab">🧪</span>
+            </span>
+            <small class="explanation hidden"> Os dados coletados devem ser mantidos atualizados, precisos e relevantes. </small>
+          </li>
+          <li>
+            <span class="mandamento">
+              <span class="mandamento-text"><strong>09</strong> - Verificar e Ajustar</span>
+              <span class="icon-lab">🧪</span>
+            </span>
+            <small class="explanation hidden"> A conformidade com a LGPD deve ser verificada por meio de auditorias periódicas. </small>
+          </li>
+          <li>
+            <span class="mandamento">
+              <span class="mandamento-text"><strong>10</strong> - Espalhar o Conhecimento</span>
+              <span class="icon-lab">🧪</span>
+            </span>
+            <small class="explanation hidden"> A cultura de proteção de dados deve ser promovida dentro da organização e entre os titulares. </small>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Botão de Voltar -->
+    <button onclick="voltarParaCenaConversation()" class="voltar-btn">Fechar</button>
+
+<script>
+  function voltarParaCenaConversation() {
+    // Verifica se o Phaser está disponível
+    if (window.game && window.game.scene) {
+      window.game.scene.start('conversation'); // 'conversation' é o nome da cena
+    } else {
+      window.history.back(); // Caso o Phaser não esteja disponível, volta no histórico
+    }
+  }
+</script>
+    
+
+    <style>
+      .voltar-btn {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #ff4444;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      .voltar-btn:hover {
+        background-color: #cc0000;
+      }
+    </style>
+
+    <!-- Script externo -->
+    <script src="script.js"></script>
+  </body>
+</html>
