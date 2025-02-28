@@ -62,7 +62,7 @@ class Gameinicial extends Phaser.Scene {
         }).setOrigin(0.5).setVisible(false); // Inicialmente invisível
 
         // Texto das perguntas
-        this.perguntaTexto = this.add.text(centerX - 30, 270, '', {
+        this.perguntaTexto = this.add.text(centerX - 30, 290, '', {
             fontSize: '15px',
             fill: '#000',
             wordWrap: { width: 250 },
